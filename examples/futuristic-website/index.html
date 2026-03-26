@@ -1,0 +1,800 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>NEXUS // 2077</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Share+Tech+Mono&display=swap');
+
+    :root {
+      --cyan:   #00f5ff;
+      --purple: #bf00ff;
+      --green:  #00ff88;
+      --dark:   #020810;
+      --panel:  rgba(0, 245, 255, 0.04);
+      --border: rgba(0, 245, 255, 0.15);
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--dark);
+      color: #c8e6ff;
+      font-family: 'Share Tech Mono', monospace;
+      overflow-x: hidden;
+    }
+
+    /* ── SCANLINES OVERLAY ── */
+    body::before {
+      content: '';
+      position: fixed; inset: 0;
+      background: repeating-linear-gradient(
+        0deg,
+        transparent,
+        transparent 2px,
+        rgba(0,0,0,.12) 2px,
+        rgba(0,0,0,.12) 4px
+      );
+      pointer-events: none;
+      z-index: 9999;
+    }
+
+    /* ── CANVAS BACKGROUND ── */
+    #bg {
+      position: fixed; inset: 0;
+      z-index: 0;
+    }
+
+    /* ── LAYOUT ── */
+    .page { position: relative; z-index: 1; }
+
+    /* ── NAV ── */
+    nav {
+      position: fixed; top: 0; left: 0; right: 0;
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 1rem 3rem;
+      background: rgba(2, 8, 16, 0.75);
+      backdrop-filter: blur(18px);
+      border-bottom: 1px solid var(--border);
+      z-index: 100;
+    }
+
+    .logo {
+      font-family: 'Orbitron', sans-serif;
+      font-weight: 900;
+      font-size: 1.4rem;
+      color: var(--cyan);
+      letter-spacing: .3em;
+      text-shadow: 0 0 20px var(--cyan);
+    }
+
+    .logo span { color: var(--purple); }
+
+    nav ul {
+      list-style: none;
+      display: flex; gap: 2.5rem;
+    }
+
+    nav a {
+      color: #7ab8d4;
+      text-decoration: none;
+      font-size: .8rem;
+      letter-spacing: .15em;
+      text-transform: uppercase;
+      transition: color .2s, text-shadow .2s;
+    }
+
+    nav a:hover {
+      color: var(--cyan);
+      text-shadow: 0 0 12px var(--cyan);
+    }
+
+    .nav-cta {
+      border: 1px solid var(--cyan);
+      padding: .4rem 1.2rem;
+      border-radius: 2px;
+      color: var(--cyan) !important;
+      text-shadow: 0 0 8px var(--cyan) !important;
+      box-shadow: 0 0 14px rgba(0,245,255,.15), inset 0 0 14px rgba(0,245,255,.05);
+      transition: background .2s, box-shadow .2s !important;
+    }
+
+    .nav-cta:hover {
+      background: rgba(0,245,255,.08);
+      box-shadow: 0 0 28px rgba(0,245,255,.35), inset 0 0 20px rgba(0,245,255,.1) !important;
+    }
+
+    /* ── HERO ── */
+    #hero {
+      min-height: 100vh;
+      display: flex; flex-direction: column;
+      align-items: center; justify-content: center;
+      text-align: center;
+      padding: 8rem 2rem 4rem;
+    }
+
+    .hero-tag {
+      font-size: .7rem;
+      letter-spacing: .4em;
+      color: var(--green);
+      text-shadow: 0 0 10px var(--green);
+      margin-bottom: 1.5rem;
+      animation: pulse 2s ease-in-out infinite;
+    }
+
+    @keyframes pulse { 0%,100% { opacity:1 } 50% { opacity:.5 } }
+
+    h1 {
+      font-family: 'Orbitron', sans-serif;
+      font-size: clamp(3rem, 10vw, 8rem);
+      font-weight: 900;
+      line-height: .9;
+      margin-bottom: 1.5rem;
+    }
+
+    h1 .line1 { color: #fff; text-shadow: 0 0 40px rgba(255,255,255,.3); }
+    h1 .line2 {
+      color: var(--cyan);
+      text-shadow: 0 0 40px var(--cyan), 0 0 80px rgba(0,245,255,.3);
+      display: block;
+    }
+
+    .glitch {
+      position: relative;
+      display: inline-block;
+    }
+
+    .glitch::before, .glitch::after {
+      content: attr(data-text);
+      position: absolute; top: 0; left: 0;
+      width: 100%; height: 100%;
+    }
+
+    .glitch::before {
+      color: var(--purple);
+      animation: glitch1 3s infinite;
+      clip-path: polygon(0 30%, 100% 30%, 100% 50%, 0 50%);
+    }
+
+    .glitch::after {
+      color: var(--green);
+      animation: glitch2 3s infinite;
+      clip-path: polygon(0 60%, 100% 60%, 100% 80%, 0 80%);
+    }
+
+    @keyframes glitch1 {
+      0%,90%,100% { transform: none; opacity: 0 }
+      91% { transform: translateX(-4px); opacity: .7 }
+      93% { transform: translateX(4px); opacity: .7 }
+      95% { transform: translateX(-2px); opacity: .7 }
+      97% { transform: none; opacity: 0 }
+    }
+
+    @keyframes glitch2 {
+      0%,92%,100% { transform: none; opacity: 0 }
+      93% { transform: translateX(4px); opacity: .6 }
+      95% { transform: translateX(-4px); opacity: .6 }
+      97% { transform: translateX(2px); opacity: .6 }
+      99% { transform: none; opacity: 0 }
+    }
+
+    .hero-desc {
+      max-width: 560px;
+      font-size: .95rem;
+      line-height: 1.8;
+      color: #6a9ab8;
+      margin-bottom: 3rem;
+    }
+
+    .hero-actions { display: flex; gap: 1.2rem; flex-wrap: wrap; justify-content: center; }
+
+    .btn {
+      font-family: 'Share Tech Mono', monospace;
+      font-size: .8rem;
+      letter-spacing: .15em;
+      text-transform: uppercase;
+      text-decoration: none;
+      padding: .85rem 2.2rem;
+      border-radius: 2px;
+      cursor: pointer;
+      transition: all .2s;
+      display: inline-block;
+    }
+
+    .btn-primary {
+      background: var(--cyan);
+      color: var(--dark);
+      border: none;
+      box-shadow: 0 0 30px rgba(0,245,255,.4);
+      font-weight: 700;
+    }
+
+    .btn-primary:hover {
+      box-shadow: 0 0 60px rgba(0,245,255,.7);
+      transform: translateY(-2px);
+    }
+
+    .btn-ghost {
+      background: transparent;
+      color: var(--cyan);
+      border: 1px solid var(--border);
+      box-shadow: inset 0 0 20px rgba(0,245,255,.04);
+    }
+
+    .btn-ghost:hover {
+      border-color: var(--cyan);
+      box-shadow: 0 0 20px rgba(0,245,255,.2), inset 0 0 20px rgba(0,245,255,.06);
+      transform: translateY(-2px);
+    }
+
+    /* ── STATS STRIP ── */
+    .stats {
+      display: flex; gap: 0; flex-wrap: wrap;
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .stat {
+      flex: 1; min-width: 180px;
+      padding: 2.5rem 2rem;
+      text-align: center;
+      border-right: 1px solid var(--border);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .stat:last-child { border-right: none; }
+
+    .stat::before {
+      content: '';
+      position: absolute; inset: 0;
+      background: linear-gradient(180deg, var(--panel) 0%, transparent 100%);
+    }
+
+    .stat-num {
+      font-family: 'Orbitron', sans-serif;
+      font-size: 2.5rem;
+      font-weight: 900;
+      color: var(--cyan);
+      text-shadow: 0 0 20px var(--cyan);
+      display: block;
+      position: relative;
+    }
+
+    .stat-label {
+      font-size: .7rem;
+      letter-spacing: .2em;
+      color: #4a7a94;
+      text-transform: uppercase;
+      margin-top: .4rem;
+      display: block;
+      position: relative;
+    }
+
+    /* ── SECTION COMMON ── */
+    section { padding: 7rem 3rem; }
+
+    .section-head {
+      text-align: center;
+      margin-bottom: 4rem;
+    }
+
+    .section-tag {
+      font-size: .65rem;
+      letter-spacing: .4em;
+      color: var(--purple);
+      text-shadow: 0 0 10px var(--purple);
+      text-transform: uppercase;
+      margin-bottom: .8rem;
+    }
+
+    h2 {
+      font-family: 'Orbitron', sans-serif;
+      font-size: clamp(1.8rem, 4vw, 3rem);
+      font-weight: 700;
+      color: #fff;
+      text-shadow: 0 0 30px rgba(255,255,255,.15);
+    }
+
+    h2 em {
+      font-style: normal;
+      color: var(--cyan);
+      text-shadow: 0 0 20px var(--cyan);
+    }
+
+    /* ── FEATURES GRID ── */
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.5px;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .card {
+      background: var(--panel);
+      border: 1px solid var(--border);
+      padding: 2.5rem 2rem;
+      position: relative;
+      overflow: hidden;
+      transition: border-color .3s, box-shadow .3s;
+    }
+
+    .card::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, var(--cyan), transparent);
+      transform: translateX(-100%);
+      transition: transform .5s;
+    }
+
+    .card:hover { border-color: rgba(0,245,255,.35); box-shadow: 0 0 40px rgba(0,245,255,.06); }
+    .card:hover::before { transform: translateX(100%); }
+
+    .card-icon {
+      font-size: 2rem;
+      margin-bottom: 1.2rem;
+      display: block;
+      filter: drop-shadow(0 0 8px var(--cyan));
+    }
+
+    .card h3 {
+      font-family: 'Orbitron', sans-serif;
+      font-size: .95rem;
+      font-weight: 700;
+      color: var(--cyan);
+      letter-spacing: .1em;
+      margin-bottom: .8rem;
+    }
+
+    .card p {
+      font-size: .85rem;
+      line-height: 1.7;
+      color: #5a8aa4;
+    }
+
+    /* ── TERMINAL BLOCK ── */
+    #demo { background: rgba(0,245,255,.02); }
+
+    .terminal-wrap {
+      max-width: 760px;
+      margin: 0 auto;
+    }
+
+    .terminal {
+      background: rgba(2, 8, 16, 0.95);
+      border: 1px solid var(--border);
+      border-radius: 4px;
+      overflow: hidden;
+      box-shadow: 0 0 60px rgba(0,245,255,.08), 0 40px 80px rgba(0,0,0,.6);
+    }
+
+    .t-bar {
+      display: flex; align-items: center; gap: .6rem;
+      padding: .8rem 1.2rem;
+      background: rgba(255,255,255,.03);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .t-dot { width: 10px; height: 10px; border-radius: 50%; }
+    .t-dot.r { background: #ff5f57; }
+    .t-dot.y { background: #febc2e; }
+    .t-dot.g { background: #28c840; }
+
+    .t-title {
+      flex: 1; text-align: center;
+      font-size: .7rem;
+      letter-spacing: .2em;
+      color: #3a5a6a;
+    }
+
+    .t-body {
+      padding: 1.5rem;
+      font-size: .82rem;
+      line-height: 2;
+      min-height: 240px;
+    }
+
+    .t-line { display: flex; align-items: flex-start; gap: .5rem; }
+    .t-prompt { color: var(--green); flex-shrink: 0; }
+    .t-cmd { color: #c8e6ff; }
+    .t-out { color: #4a7a94; padding-left: 1.2rem; }
+    .t-hi { color: var(--cyan); }
+    .t-cursor {
+      display: inline-block;
+      width: 9px; height: 1em;
+      background: var(--cyan);
+      animation: blink .8s step-end infinite;
+      vertical-align: text-bottom;
+      margin-left: 2px;
+    }
+
+    @keyframes blink { 0%,100% { opacity:1 } 50% { opacity:0 } }
+
+    /* ── CTA SECTION ── */
+    #cta {
+      text-align: center;
+      padding: 8rem 2rem;
+      position: relative;
+    }
+
+    #cta::before {
+      content: '';
+      position: absolute;
+      left: 50%; top: 50%;
+      transform: translate(-50%,-50%);
+      width: 600px; height: 600px;
+      border-radius: 50%;
+      background: radial-gradient(ellipse, rgba(191,0,255,.06) 0%, transparent 70%);
+      pointer-events: none;
+    }
+
+    #cta h2 { margin-bottom: 1.2rem; }
+
+    #cta p {
+      color: #4a6a7a;
+      font-size: .9rem;
+      margin-bottom: 2.5rem;
+    }
+
+    /* ── FOOTER ── */
+    footer {
+      border-top: 1px solid var(--border);
+      padding: 2rem 3rem;
+      display: flex; align-items: center; justify-content: space-between;
+      flex-wrap: wrap; gap: 1rem;
+      font-size: .72rem;
+      color: #2a4a5a;
+      letter-spacing: .1em;
+    }
+
+    /* ── HUD CORNERS (decorative) ── */
+    .hud {
+      position: relative;
+    }
+
+    .hud::before, .hud::after,
+    .hud > .hud-br, .hud > .hud-bl {
+      content: '';
+      position: absolute;
+      width: 18px; height: 18px;
+      border-color: var(--cyan);
+      border-style: solid;
+      opacity: .5;
+    }
+
+    .hud::before { top: -1px; left: -1px; border-width: 1px 0 0 1px; }
+    .hud::after  { top: -1px; right: -1px; border-width: 1px 1px 0 0; }
+    .hud > .hud-br { bottom: -1px; right: -1px; border-width: 0 1px 1px 0; }
+    .hud > .hud-bl { bottom: -1px; left: -1px; border-width: 0 0 1px 1px; }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 640px) {
+      nav { padding: 1rem 1.5rem; }
+      nav ul { display: none; }
+      section { padding: 5rem 1.5rem; }
+    }
+  </style>
+</head>
+<body>
+
+<canvas id="bg"></canvas>
+
+<div class="page">
+
+  <!-- NAV -->
+  <nav>
+    <div class="logo">NEX<span>US</span></div>
+    <ul>
+      <li><a href="#features">System</a></li>
+      <li><a href="#demo">Terminal</a></li>
+      <li><a href="#cta">Deploy</a></li>
+      <li><a href="#cta" class="nav-cta">Zugang</a></li>
+    </ul>
+  </nav>
+
+  <!-- HERO -->
+  <section id="hero">
+    <p class="hero-tag">▸ SYSTEM ONLINE // PROTOKOLL AKTIV</p>
+    <h1>
+      <span class="line1">DIE</span>
+      <span class="line2 glitch" data-text="ZUKUNFT">ZUKUNFT</span>
+    </h1>
+    <p class="hero-desc">
+      Hyperneuronale Schnittstelle der nächsten Generation.
+      Verbinde dich mit dem globalen Datenstrom —
+      Echtzeit-Kognition, verteilte Intelligenz, keine Latenz.
+    </p>
+    <div class="hero-actions">
+      <a href="#features" class="btn btn-primary">System initiieren</a>
+      <a href="#demo" class="btn btn-ghost">Protokoll ansehen</a>
+    </div>
+  </section>
+
+  <!-- STATS -->
+  <div class="stats">
+    <div class="stat">
+      <span class="stat-num" data-target="99.9">0</span>
+      <span class="stat-label">Uptime %</span>
+    </div>
+    <div class="stat">
+      <span class="stat-num" data-target="0.4">0</span>
+      <span class="stat-label">Latenz ms</span>
+    </div>
+    <div class="stat">
+      <span class="stat-num" data-target="2048">0</span>
+      <span class="stat-label">Nodes aktiv</span>
+    </div>
+    <div class="stat">
+      <span class="stat-num" data-target="∞">0</span>
+      <span class="stat-label">Datendurchsatz</span>
+    </div>
+  </div>
+
+  <!-- FEATURES -->
+  <section id="features">
+    <div class="section-head">
+      <p class="section-tag">// KERNMODULE</p>
+      <h2>Technologie aus <em>2077</em></h2>
+    </div>
+    <div class="grid">
+      <div class="card hud">
+        <div class="hud-br"></div><div class="hud-bl"></div>
+        <span class="card-icon">⬡</span>
+        <h3>Quantum Mesh</h3>
+        <p>Verteiltes Rechennetz über 2048 synchronisierte Knotenpunkte. Keine zentrale Schwachstelle. Selbstheilende Topologie.</p>
+      </div>
+      <div class="card hud">
+        <div class="hud-br"></div><div class="hud-bl"></div>
+        <span class="card-icon">◈</span>
+        <h3>Neural Sync</h3>
+        <p>Direkte kognitive Schnittstelle mit sub-millisekunder Reaktionszeit. Gedanken werden Befehle, Befehle werden Realität.</p>
+      </div>
+      <div class="card hud">
+        <div class="hud-br"></div><div class="hud-bl"></div>
+        <span class="card-icon">⟁</span>
+        <h3>Void Encryption</h3>
+        <p>Quantenverschlüsselung auf Basis kollabierter Wellenfunktionen. Mathematisch unknackbar. Für immer.</p>
+      </div>
+      <div class="card hud">
+        <div class="hud-br"></div><div class="hud-bl"></div>
+        <span class="card-icon">⌬</span>
+        <h3>Predictive Core</h3>
+        <p>Antizipiert Systemausfälle 4,2 Sekunden bevor sie eintreten. Autokorrektur ohne menschlichen Eingriff.</p>
+      </div>
+      <div class="card hud">
+        <div class="hud-br"></div><div class="hud-bl"></div>
+        <span class="card-icon">⊕</span>
+        <h3>Dark Fiber Link</h3>
+        <p>Zugang zum ungenutzten Glasfasernetz der Erde. 400 Tbit/s reservierte Bandbreite. Kein Routing, kein Overhead.</p>
+      </div>
+      <div class="card hud">
+        <div class="hud-br"></div><div class="hud-bl"></div>
+        <span class="card-icon">❖</span>
+        <h3>Holo Interface</h3>
+        <p>Dreidimensionale Projektionsebene. Interagiere mit Daten im physischen Raum — berühren, bewegen, zerstören.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- TERMINAL -->
+  <section id="demo">
+    <div class="section-head">
+      <p class="section-tag">// LIVE PROTOKOLL</p>
+      <h2>System <em>Terminal</em></h2>
+    </div>
+    <div class="terminal-wrap">
+      <div class="terminal hud">
+        <div class="hud-br"></div><div class="hud-bl"></div>
+        <div class="t-bar">
+          <div class="t-dot r"></div>
+          <div class="t-dot y"></div>
+          <div class="t-dot g"></div>
+          <span class="t-title">NEXUS SHELL v7.0 // ROOT ACCESS</span>
+        </div>
+        <div class="t-body" id="terminal-output"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section id="cta">
+    <div class="section-head">
+      <p class="section-tag">// BEREIT</p>
+      <h2>Tritt dem <em>Netz</em> bei</h2>
+    </div>
+    <p>Zugang ist limitiert. 47 Slots verfügbar. Aktiviere jetzt.</p>
+    <div class="hero-actions">
+      <a href="#" class="btn btn-primary">Zugang aktivieren</a>
+      <a href="#" class="btn btn-ghost">Mehr erfahren</a>
+    </div>
+  </section>
+
+  <footer>
+    <span class="logo" style="font-size:.9rem">NEX<span>US</span></span>
+    <span>// SYSTEM STATUS: NOMINAL // NODE 7 OF 2048 //</span>
+    <span>© 2077 NEXUS CORP.</span>
+  </footer>
+
+</div>
+
+<script>
+/* ── PARTICLE CANVAS ── */
+const canvas = document.getElementById('bg');
+const ctx = canvas.getContext('2d');
+let W, H, particles = [], grid = [];
+
+function resize() {
+  W = canvas.width  = window.innerWidth;
+  H = canvas.height = window.innerHeight;
+}
+
+window.addEventListener('resize', resize);
+resize();
+
+// Grid lines
+const COLS = 30, ROWS = 18;
+function drawGrid() {
+  ctx.strokeStyle = 'rgba(0,245,255,0.03)';
+  ctx.lineWidth = 1;
+  for (let i = 0; i <= COLS; i++) {
+    ctx.beginPath();
+    ctx.moveTo(W * i / COLS, 0);
+    ctx.lineTo(W * i / COLS, H);
+    ctx.stroke();
+  }
+  for (let j = 0; j <= ROWS; j++) {
+    ctx.beginPath();
+    ctx.moveTo(0, H * j / ROWS);
+    ctx.lineTo(W, H * j / ROWS);
+    ctx.stroke();
+  }
+}
+
+// Particles
+class Particle {
+  constructor() { this.reset(); }
+  reset() {
+    this.x  = Math.random() * W;
+    this.y  = Math.random() * H;
+    this.vx = (Math.random() - .5) * .4;
+    this.vy = (Math.random() - .5) * .4;
+    this.r  = Math.random() * 1.5 + .3;
+    this.a  = Math.random();
+    this.hue= Math.random() > .5 ? '0,245,255' : '191,0,255';
+  }
+  update() {
+    this.x += this.vx; this.y += this.vy;
+    if (this.x < 0 || this.x > W || this.y < 0 || this.y > H) this.reset();
+  }
+  draw() {
+    ctx.beginPath();
+    ctx.arc(this.x, this.y, this.r, 0, Math.PI * 2);
+    ctx.fillStyle = `rgba(${this.hue},${this.a})`;
+    ctx.fill();
+  }
+}
+
+for (let i = 0; i < 120; i++) particles.push(new Particle());
+
+// Connect nearby particles
+function connect() {
+  for (let i = 0; i < particles.length; i++) {
+    for (let j = i + 1; j < particles.length; j++) {
+      const dx = particles[i].x - particles[j].x;
+      const dy = particles[i].y - particles[j].y;
+      const d  = Math.sqrt(dx*dx + dy*dy);
+      if (d < 120) {
+        ctx.beginPath();
+        ctx.moveTo(particles[i].x, particles[i].y);
+        ctx.lineTo(particles[j].x, particles[j].y);
+        ctx.strokeStyle = `rgba(0,245,255,${.08 * (1 - d/120)})`;
+        ctx.lineWidth = .5;
+        ctx.stroke();
+      }
+    }
+  }
+}
+
+function loop() {
+  ctx.clearRect(0, 0, W, H);
+  drawGrid();
+  particles.forEach(p => { p.update(); p.draw(); });
+  connect();
+  requestAnimationFrame(loop);
+}
+loop();
+
+/* ── COUNTER ANIMATION ── */
+const counters = document.querySelectorAll('.stat-num');
+const obs = new IntersectionObserver(entries => {
+  entries.forEach(e => {
+    if (!e.isIntersecting) return;
+    const el     = e.target;
+    const target = el.dataset.target;
+    if (target === '∞') { el.textContent = '∞'; return; }
+    const end   = parseFloat(target);
+    const dec   = (target.includes('.')) ? target.split('.')[1].length : 0;
+    const dur   = 1800;
+    const step  = 16;
+    let cur     = 0;
+    const inc   = end / (dur / step);
+    const t     = setInterval(() => {
+      cur = Math.min(cur + inc, end);
+      el.textContent = cur.toFixed(dec);
+      if (cur >= end) clearInterval(t);
+    }, step);
+    obs.unobserve(el);
+  });
+}, { threshold: .5 });
+counters.forEach(c => obs.observe(c));
+
+/* ── TERMINAL ANIMATION ── */
+const lines = [
+  { type: 'cmd',  text: 'nexus --connect --node=7 --auth=quantum' },
+  { type: 'out',  text: '[ OK ] Verbindung zu Quantum Mesh hergestellt' },
+  { type: 'out',  text: '[ OK ] 2048 Nodes erreichbar · Latenz: <span class="t-hi">0.4ms</span>' },
+  { type: 'cmd',  text: 'nexus --scan --depth=full' },
+  { type: 'out',  text: '[ .. ] Scanne Netzwerktopologie...' },
+  { type: 'out',  text: '[ OK ] <span class="t-hi">Keine Anomalien</span> detektiert' },
+  { type: 'cmd',  text: 'nexus --sync neural --freq=120hz' },
+  { type: 'out',  text: '[ OK ] Neuronale Synchronisation aktiv' },
+  { type: 'out',  text: '[ OK ] Uptime: <span class="t-hi">99.9%</span> · Verschlüsselung: QUANTUM-512' },
+  { type: 'cmd',  text: 'nexus --status' },
+  { type: 'out',  text: '[ SYS ] NEXUS v7.0 // ALLE SYSTEME NOMINAL //' },
+];
+
+const out = document.getElementById('terminal-output');
+let li = 0;
+
+async function typeTerminal() {
+  if (li >= lines.length) return;
+  const line = lines[li++];
+  const div = document.createElement('div');
+  div.className = 't-line';
+
+  if (line.type === 'cmd') {
+    const p = document.createElement('span');
+    p.className = 't-prompt';
+    p.textContent = 'root@nexus:~$';
+    const c = document.createElement('span');
+    c.className = 't-cmd';
+    div.appendChild(p);
+    div.appendChild(c);
+    out.appendChild(div);
+    // type char by char
+    for (const ch of line.text) {
+      c.textContent += ch;
+      await sleep(28 + Math.random() * 30);
+    }
+  } else {
+    const c = document.createElement('span');
+    c.className = 't-out';
+    c.innerHTML = line.text;
+    div.appendChild(c);
+    out.appendChild(div);
+  }
+
+  out.scrollTop = out.scrollHeight;
+  await sleep(line.type === 'cmd' ? 200 : 120);
+  typeTerminal();
+}
+
+function sleep(ms) { return new Promise(r => setTimeout(r, ms)); }
+
+// Start when terminal section is visible
+const termObs = new IntersectionObserver(entries => {
+  if (entries[0].isIntersecting) {
+    typeTerminal();
+    termObs.disconnect();
+  }
+}, { threshold: .3 });
+termObs.observe(document.getElementById('demo'));
+</script>
+</body>
+</html>
