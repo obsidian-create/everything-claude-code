@@ -142,6 +142,16 @@
         "CONFLUENCE_API_TOKEN": "YOUR_CONFLUENCE_TOKEN_HERE"
       },
       "description": "Confluence Cloud integration — search pages, retrieve content, explore spaces"
+    },
+    "n8n-mcp": {
+      "command": "npx",
+      "args": ["-y", "n8n-mcp"],
+      "env": {
+        "MCP_MODE": "stdio",
+        "N8N_HOST": "YOUR_N8N_HOST_HERE",
+        "N8N_API_KEY": "YOUR_N8N_API_KEY_HERE"
+      },
+      "description": "n8n workflow automation — search nodes/templates (2700+), validate workflows, manage executions. API credentials optional (needed for workflow CRUD). Repo: https://github.com/czlonkowski/n8n-mcp"
     }
   },
   "_comments": {
