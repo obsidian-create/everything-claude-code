@@ -23,6 +23,8 @@ const { getPackageManager, getSelectionPrompt } = require('../lib/package-manage
 const { listAliases } = require('../lib/session-aliases');
 const { detectProjectType } = require('../lib/project-detect');
 const path = require('path');
+const fs = require('fs');
+const os = require('os');
 
 function dedupeRecentSessions(searchDirs) {
   const recentSessionsByName = new Map();
@@ -61,6 +63,20 @@ async function main() {
   // Ensure directories exist
   ensureDir(sessionsDir);
   ensureDir(learnedDir);
+
+  // Load long-term persistent memory (cross-session knowledge)
+  const memoryFile = path.join(os.homedir(), '.claude', 'memory', 'CORE.md');
+  if (fs.existsSync(memoryFile)) {
+    const memoryContent = stripAnsi(readFile(memoryFile) || '').trim();
+    if (memoryContent && !memoryContent.includes('<!-- Wer du bist')) {
+      additionalContextParts.push(
+        `## Persistentes Gedächtnis (gilt für alle Sessions)\n\n${memoryContent}`
+      );
+      log('[SessionStart] Long-term memory loaded from ~/.claude/memory/CORE.md');
+    } else {
+      log('[SessionStart] Memory file exists but contains only template — skipping');
+    }
+  }
 
   // Check for recent session files (last 7 days)
   const recentSessions = dedupeRecentSessions(getSessionSearchDirs());
