@@ -1,12 +1,14 @@
 {
-  "name": "invoicing-tool",
+  "name": "rechnungstool",
   "version": "1.0.0",
-  "description": "Full-stack invoicing tool - similar to Lexoffice",
+  "description": "Vollständiges Rechnungstool – ähnlich wie Lexoffice",
+  "private": true,
   "scripts": {
-    "install:all": "cd backend && npm install && cd ../frontend && npm install",
+    "install": "cd backend && npm install && cd ../frontend && npm install",
+    "build": "cd frontend && npm run build",
+    "start": "node backend/server.js",
+    "setup": "npm run install && npm run build",
     "dev:backend": "cd backend && npm run dev",
-    "dev:frontend": "cd frontend && npm run dev",
-    "start:backend": "cd backend && npm start"
-  },
-  "private": true
+    "dev:frontend": "cd frontend && npm run dev"
+  }
 }

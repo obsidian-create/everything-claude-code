@@ -1,90 +1,77 @@
 # Rechnungstool
 
-Ein vollständiges Rechnungstool ähnlich wie Lexoffice — mit individuell gestaltbarem Branding, Kundenverwaltung, Artikelverwaltung, Steuersätzen und mehreren Layouts.
+Vollständiges Rechnungstool (ähnlich Lexoffice) — mit Branding, Kunden, Artikeln, Rechnungen, Angeboten und PDF-Export.
 
-## Features
-
-- **Rechnungen & Angebote** — Erstellen, bearbeiten, PDF-Export
-- **4 Layouts** — Klassisch, Modern, Minimal, Elegant
-- **Kundenverwaltung** — CRUD mit automatischer Kundennummer
-- **Artikelverwaltung** — Produktstamm mit Einheiten, Preisen, Steuern
-- **Steuersätze** — Konfigurierbar (Standard: 19%, 7%, 0%)
-- **Individuelle Felder** — Für Kunden, Artikel, Rechnungen und Angebote
-- **Branding** — Logo-Upload, Primär-/Sekundär-/Akzentfarbe
-- **Dashboard** — Umsatzübersicht, offene Posten, Statistiken
-- **PDF-Generator** — Automatische PDF-Erstellung mit Firmenlogo
-
-## Tech Stack
-
-- **Backend**: Node.js + Express + SQLite (`better-sqlite3`)
-- **Frontend**: React 18 + Vite + Tailwind CSS
-- **PDF**: PDFKit (serverseitig)
+---
 
 ## Schnellstart
 
+### macOS — Doppelklick
+1. Finder öffnen → Ordner `invoicing-tool`
+2. Doppelklick auf **`Rechnungstool.command`**
+3. Browser öffnet sich automatisch auf `http://localhost:3000`
+
+> Beim ersten Start: ~1-2 Min. für Installation + Build (einmalig)
+
+---
+
+### Windows — Doppelklick
+1. Explorer öffnen → Ordner `invoicing-tool`
+2. Doppelklick auf **`start.bat`**
+3. Browser öffnet sich automatisch auf `http://localhost:3000`
+
+---
+
+### Linux / Terminal
 ```bash
-# 1. Abhängigkeiten installieren
-cd backend && npm install
-cd ../frontend && npm install
-
-# 2. Backend starten (Port 3001)
-cd backend && npm run dev
-
-# 3. Frontend starten (Port 3000) — in neuem Terminal
-cd frontend && npm run dev
-
-# 4. Öffnen: http://localhost:3000
+cd invoicing-tool
+./start.sh
 ```
 
-## Verzeichnisstruktur
+---
 
-```
-invoicing-tool/
-├── backend/
-│   ├── server.js          # Express-Server
-│   ├── db.js              # SQLite-Datenbankschema & Seeds
-│   ├── routes/
-│   │   ├── settings.js    # Firmeneinstellungen, Logo-Upload
-│   │   ├── taxRates.js    # Steuersätze
-│   │   ├── customFields.js# Individuelle Felder
-│   │   ├── customers.js   # Kundenverwaltung
-│   │   ├── articles.js    # Artikelverwaltung
-│   │   ├── invoices.js    # Rechnungen & Angebote
-│   │   └── pdf.js         # PDF-Generierung
-│   └── uploads/           # Logo-Dateien
-├── frontend/
-│   └── src/
-│       ├── pages/
-│       │   ├── Dashboard.jsx
-│       │   ├── Customers.jsx / CustomerForm.jsx
-│       │   ├── Articles.jsx / ArticleForm.jsx
-│       │   ├── Invoices.jsx
-│       │   ├── InvoiceForm.jsx  # Rechnungs- & Angebotserstellung
-│       │   ├── InvoiceDetail.jsx
-│       │   └── Settings.jsx     # Alle Einstellungen
-│       └── components/
-│           ├── Layout.jsx
-│           ├── Modal.jsx
-│           └── ConfirmDialog.jsx
-└── README.md
+### Als Desktop-App (Electron) bauen
+```bash
+cd invoicing-tool/electron
+npm install
+npm start                  # Direkt starten
+npm run build:mac          # .dmg für macOS
+npm run build:win          # .exe Installer für Windows
+npm run build:linux        # .AppImage für Linux
 ```
 
-## PDF-Layouts
+---
 
-| Layout | Beschreibung |
-|--------|-------------|
-| **Klassisch** | Farbiger Header-Balken, Absenderzeile, strukturierte Tabelle |
-| **Modern** | Farbige Seitenleiste links, minimalistisches Hauptfeld |
-| **Minimal** | Schlicht, nur Tabelle und Totals |
-| **Elegant** | Akzentfarbe, hochwertige Typografie |
+### Web-Deployment (Railway / Render)
 
-## Individuelle Felder
+**Railway (1-Klick):**
+1. Repo auf GitHub pushen
+2. railway.app → "New Project" → "Deploy from GitHub"
+3. Repo auswählen → fertig
 
-Unter **Einstellungen → Individuelle Felder** können beliebige Felder für folgende Entitäten definiert werden:
+**Docker:**
+```bash
+cd invoicing-tool
+docker build -t rechnungstool .
+docker run -p 3000:3000 -v $(pwd)/data:/app/backend rechnungstool
+```
 
-- Kunden
-- Artikel  
-- Rechnungen
-- Angebote
+---
 
-Feldtypen: Text, Zahl, Datum, Mehrzeiliger Text, Auswahlliste, Checkbox, E-Mail, URL
+## Features
+
+| Bereich | Details |
+|---------|---------|
+| **Dashboard** | Umsatz, bezahlt, überfällig, letzte Rechnungen |
+| **Kunden** | CRUD, auto. Kundennummer, Suche |
+| **Artikel** | CRUD, auto. Artikelnummer, Steuersatz-Zuweisung |
+| **Rechnungen** | 4 Layouts, Positionen, Rabatt, Steuern, PDF |
+| **Angebote** | Identisch wie Rechnungen |
+| **Einstellungen** | Logo, Farben, Firma, Bankdaten, Steuersätze, individuelle Felder |
+
+## Tech Stack
+
+- **Backend**: Node.js + Express + SQLite
+- **Frontend**: React 18 + Vite + Tailwind CSS
+- **PDF**: PDFKit
+- **Desktop**: Electron
