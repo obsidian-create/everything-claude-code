@@ -1,0 +1,9 @@
+<svg xmlns='http://www.w3.org/2000/svg' width='192' height='192' viewBox='0 0 192 192'>
+  <rect width='192' height='192' rx='38.400000000000006' fill='#2563eb'/>
+  <rect x='48' y='34.56' width='96' height='9.600000000000001' rx='3.84' fill='white' opacity='0.9'/>
+  <rect x='48' y='57.599999999999994' width='96' height='80.64' rx='5.76' fill='white' opacity='0.15'/>
+  <rect x='57.599999999999994' y='67.19999999999999' width='28.799999999999997' height='11.52' rx='1.92' fill='white' opacity='0.8'/>
+  <rect x='57.599999999999994' y='88.32000000000001' width='53.760000000000005' height='7.68' rx='1.92' fill='white' opacity='0.6'/>
+  <rect x='57.599999999999994' y='105.60000000000001' width='38.400000000000006' height='7.68' rx='1.92' fill='white' opacity='0.6'/>
+  <rect x='99.84' y='119.03999999999999' width='34.56' height='13.440000000000001' rx='3.84' fill='#f59e0b'/>
+</svg>
