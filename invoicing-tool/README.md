@@ -1,96 +1,78 @@
 # Rechnungstool
 
-Vollständiges Rechnungstool (ähnlich Lexoffice) — Rechnungen, Angebote, Kunden, Artikel, Branding, PDF-Export.
+Vollständiges Rechnungstool (ähnlich Lexoffice) — Rechnungen, Angebote, Kunden, Artikel, Branding, PDF-Export, PWA für iPhone.
 
 ---
 
-## Mac — Desktop App (Empfohlen)
+## 🖥 Mac — Setup (einmalig, 1 Befehl)
 
-### Schritt 1: Voraussetzungen
-[Node.js](https://nodejs.org) installieren (LTS Version, kostenlos)
+**Terminal öffnen** (`Cmd+Leertaste` → "Terminal") und eingeben:
 
-### Schritt 2: Einmalig bauen
-```bash
-# Terminal öffnen (Cmd+Leertaste → "Terminal")
-
-cd /home/user/everything-claude-code/invoicing-tool
-
-# Abhängigkeiten installieren
-cd backend && npm install && cd ../frontend && npm install
-
-# Frontend bauen
-cd frontend && npm run build && cd ..
-
-# Electron installieren
-cd electron && npm install && cd ..
-```
-
-### Schritt 3: App starten
-```bash
-cd /home/user/everything-claude-code/invoicing-tool/electron
-npm start
-```
-→ App öffnet sich als Fenster auf dem Desktop ✅
-
-### Schritt 4 (optional): .dmg Installer bauen
-```bash
-cd /home/user/everything-claude-code/invoicing-tool/electron
-npm run build:mac
-```
-→ Erstellt `electron/dist/Rechnungstool.dmg`
-→ Doppelklick → in Programme ziehen → fertig, wie jede andere Mac-App
-
----
-
-## iOS — App auf dem iPhone/iPad
-
-iOS-Apps können **ohne App Store** als PWA installiert werden:
-
-### Schritt 1: App online stellen (Railway — kostenlos)
-1. Auf [railway.app](https://railway.app) registrieren (kostenlos)
-2. "New Project" → "Deploy from GitHub Repo"
-3. Dieses Repository auswählen → Ordner `invoicing-tool` als Root
-4. Railway gibt eine URL aus, z.B. `https://rechnungstool-xyz.up.railway.app`
-
-### Schritt 2: App auf iPhone installieren
-1. iPhone → Safari öffnen
-2. Die Railway-URL eingeben
-3. Unten auf **Teilen** tippen (Quadrat mit Pfeil nach oben)
-4. **"Zum Home-Bildschirm"** tippen
-5. Name bestätigen → **Hinzufügen**
-
-→ App-Icon erscheint auf dem Homescreen wie eine normale App ✅
-→ Öffnet sich im Vollbild ohne Browser-Leiste
-
----
-
-## Schnellstart (Browser, ohne Installation)
 ```bash
 cd /home/user/everything-claude-code/invoicing-tool
-./start.sh          # macOS/Linux — öffnet Browser automatisch
-start.bat           # Windows — Doppelklick
+./setup-mac.sh
 ```
-→ Öffnet http://localhost:3000 im Browser
+
+Das Skript macht alles automatisch:
+- Prüft ob Node.js installiert ist (öffnet Download-Seite falls nötig)
+- Installiert alle Abhängigkeiten
+- Baut das Frontend
+- Fragt ob Electron (Desktop-App) installiert werden soll
+- Startet die App
 
 ---
 
-## Docker (Self-Hosting)
+## 📱 iPhone — App installieren (Online-Deployment)
+
+### Option A: Railway (empfohlen, kostenlos)
+
 ```bash
-cd invoicing-tool
+cd /home/user/everything-claude-code/invoicing-tool
+./deploy.sh
+```
+
+Das Skript:
+1. Installiert Railway CLI
+2. Öffnet Browser → einfach "Authorize" klicken
+3. Deployt automatisch (~2-3 Min.)
+4. Gibt die fertige URL aus
+
+**Dann auf dem iPhone:**
+1. Safari → URL öffnen
+2. Teilen-Symbol (unten) → **"Zum Home-Bildschirm"**
+3. → App-Icon auf dem Homescreen ✅
+
+### Option B: Docker
+
+```bash
 docker build -t rechnungstool .
-docker run -p 3000:3000 -v $(pwd)/backend:/app/backend rechnungstool
+docker run -p 3000:3000 rechnungstool
 ```
+
+---
+
+## ⚡ Schnellstart (ohne Installation)
+
+```bash
+cd /home/user/everything-claude-code/invoicing-tool
+node backend/server.js
+# → http://localhost:3000 öffnet sich automatisch
+```
+
+> Voraussetzung: `./setup-mac.sh` wurde einmal ausgeführt
 
 ---
 
 ## Features
 
-| Bereich | Details |
-|---------|---------|
+| | |
+|---|---|
 | **Dashboard** | Umsatz, bezahlt, überfällig, letzte Rechnungen |
-| **Kunden** | CRUD, automatische Kundennummer (KD-0001) |
+| **Kunden** | CRUD, auto. Kundennummer (KD-0001) |
 | **Artikel** | Produktstamm mit Preisen und Steuersätzen |
 | **Rechnungen** | 4 Layouts, Positionen, Rabatt, PDF-Export |
-| **Angebote** | Identisch wie Rechnungen |
-| **Einstellungen** | Logo, Farben, Firmendaten, Steuersätze, individuelle Felder |
-| **PWA** | Installierbar auf iPhone/iPad/Android |
+| **Angebote** | Eigener Nummernkreis, gleiche Features |
+| **Einstellungen** | Logo, Farben, Firma, Bankdaten, Steuersätze |
+| **Individuelle Felder** | Für Kunden, Artikel, Rechnungen, Angebote |
+| **PWA** | Installierbar auf iPhone/iPad wie eine native App |
+| **Offline** | Service Worker für Offline-Nutzung |

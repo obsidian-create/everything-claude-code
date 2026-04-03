@@ -1,0 +1,9 @@
+node_modules/
+frontend/dist/
+backend/invoicing.db-shm
+backend/invoicing.db-wal
+backend/uploads/*
+!backend/uploads/.gitkeep
+electron/dist/
+.env
+.DS_Store
