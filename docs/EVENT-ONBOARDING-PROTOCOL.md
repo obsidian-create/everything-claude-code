@@ -5,105 +5,105 @@
 
 ---
 
+## Onboarding-Systemübersicht
+
+```
+Rolling-Cohort-System: Jeder Onboarding-Tag läuft nach IDENTISCHEM Ablauf.
+Mitarbeitende, die ihr Onboarding bereits abgeschlossen haben,
+werden an diesem Tag regulär eingeteilt.
+
+  Kohorte A  →  Onboarding-Tag 1  |  —
+  Kohorte B  →  Onboarding-Tag 2  |  Kohorte A: reguläre Arbeit
+  Kohorte C  →  Onboarding-Tag 3  |  Kohorte A+B: reguläre Arbeit
+  (weitere Kohorten bei Bedarf)
+```
+
+> **Hinweis für Trainer:** Alle Module werden an jedem Onboarding-Tag vollständig
+> wiederholt. Trainer-Verfügbarkeit über alle Kohorten-Tage sicherstellen.
+
+---
+
 ## 1. Event-Übersicht
 
 | Feld | Info |
 |------|------|
 | **Projektname** | _[wird ergänzt]_ |
 | **Projektlaufzeit** | 6 Monate (Start: _[wird ergänzt]_ — Ende: _[wird ergänzt]_) |
-| **Onboarding-Phase** | 3 Tage (Datum: _[wird ergänzt]_) |
+| **Onboarding-Tage gesamt** | _[Anzahl]_ Kohorten-Tage (Start: _[wird ergänzt]_) |
+| **Onboarding-System** | Rolling-Cohort — identischer Tagesablauf je Gruppe |
 | **Ort / Venue** | _[wird ergänzt]_ |
 | **Adresse** | _[wird ergänzt]_ |
-| **Teamgröße** | _[wird ergänzt]_ |
+| **Teamgröße gesamt** | _[wird ergänzt]_ |
 | **Eventtyp** | _[wird ergänzt]_ |
 | **Veranstalter** | _[wird ergänzt]_ |
 
 ---
 
-## 2. Onboarding-Phase — 3-Tages-Programm
+## 2. Kohorten-Planung
 
-> Alle neuen Mitarbeitenden durchlaufen die 3-tägige Einarbeitungsphase vor dem operativen Start.
-> Ziel: Gelände kennen, Outlets verstehen, Systeme bedienen können.
+> Zuweisung der Mitarbeitenden zu den Onboarding-Tagen.
+> Wer bereits ongeboadet ist, arbeitet regulär.
 
----
+| Kohorte | Onboarding-Datum | Teilnehmende (Namen / Rollen) | Trainer anwesend | Regulär im Einsatz |
+|---------|------------------|-------------------------------|------------------|--------------------|
+| A | _[Datum]_ | _[wird ergänzt]_ | _[wird ergänzt]_ | — |
+| B | _[Datum]_ | _[wird ergänzt]_ | _[wird ergänzt]_ | Kohorte A |
+| C | _[Datum]_ | _[wird ergänzt]_ | _[wird ergänzt]_ | Kohorte A + B |
+| _[weitere]_ | | | | |
 
-### TAG 1 — Geländebegehung & Orientierung
-
-**Fokus:** Das gesamte Gelände kennenlernen, Wege und Bereiche verstehen.
-
-| Zeit | Programmpunkt | Ort | Verantwortlich | Gruppe |
-|------|---------------|-----|----------------|--------|
-| _[Uhrzeit]_ | Begrüßung & Willkommens-Briefing | _[Treffpunkt]_ | Projektleitung | Alle |
-| _[Uhrzeit]_ | Vorstellung Projektstruktur & Team | _[Raum]_ | Projektleitung | Alle |
-| _[Uhrzeit]_ | **Geländebegehung Teil 1** — Eingang, Hauptachsen, Orientierungspunkte | Gelände | _[wird ergänzt]_ | Alle |
-| _[Uhrzeit]_ | Mittagspause | _[wird ergänzt]_ | — | — |
-| _[Uhrzeit]_ | **Geländebegehung Teil 2** — Outlets, Lager, Backstage-Bereiche, Personalzugänge | Gelände | _[wird ergänzt]_ | Alle |
-| _[Uhrzeit]_ | **Geländebegehung Teil 3** — Notausgänge, Sanitär, Erste Hilfe, Sicherheitspunkte | Gelände | _[wird ergänzt]_ | Alle |
-| _[Uhrzeit]_ | Q&A + Tagesabschluss | _[Raum]_ | Projektleitung | Alle |
-
-**Unterlagen Tag 1:**
-- [ ] Geländeplan (gedruckt + digital)
-- [ ] Laufzettel Begehung
-- [ ] Willkommensmappe
+**Max. Gruppengröße pro Onboarding-Tag:** _[wird ergänzt]_ Personen
 
 ---
 
-### TAG 2 — Outlets & Abläufe
+## 3. Tagesablauf Onboarding (identisch für jede Kohorte)
 
-**Fokus:** Jeden Outlet kennenlernen, Abläufe verstehen, Zuständigkeiten klären.
+> Dieser Ablauf gilt **unverändert für jeden Onboarding-Tag**.
 
-| Zeit | Programmpunkt | Ort | Verantwortlich | Gruppe |
-|------|---------------|-----|----------------|--------|
-| _[Uhrzeit]_ | Morgen-Briefing | _[Treffpunkt]_ | _[wird ergänzt]_ | Alle |
-| _[Uhrzeit]_ | **Outlet-Runde** — Vorstellung aller Outlets inkl. Konzept, Sortiment, Zuständigkeiten | Outlets | Outlet-Leads | Alle |
-| _[Uhrzeit]_ | **Ablauf-Besprechung pro Outlet** — Schichtbeginn, Setup, Service, Abbau, Übergabe | Outlets | Outlet-Leads | Gruppen |
-| _[Uhrzeit]_ | Mittagspause | _[wird ergänzt]_ | — | — |
-| _[Uhrzeit]_ | **Vertiefung Outlet-Abläufe** — Sonderfälle, Eskalation, Kommunikationswege | _[Raum]_ | _[wird ergänzt]_ | Gruppen |
-| _[Uhrzeit]_ | **Lager & Nachschub** — Lagerstruktur, Nachbestellprozess, Zugangsregelungen | Lager | _[wird ergänzt]_ | Kommissionierer |
-| _[Uhrzeit]_ | Q&A + Tagesabschluss | _[Raum]_ | Projektleitung | Alle |
+### Block 1 — Begrüßung & Geländebegehung (Vormittag)
 
-#### Outlet-Übersicht
+| Zeit | Programmpunkt | Ort | Verantwortlich |
+|------|---------------|-----|----------------|
+| _[Uhrzeit]_ | Ankommen, Namensschilder ausgeben, Willkommensmappe verteilen | _[Treffpunkt]_ | HR / Onboarding-Lead |
+| _[Uhrzeit]_ | Begrüßung & Willkommens-Briefing | _[Raum]_ | Projektleitung |
+| _[Uhrzeit]_ | Vorstellung: Projektstruktur, Team, Spielregeln, Kommunikationswege | _[Raum]_ | Projektleitung |
+| _[Uhrzeit]_ | **Geländebegehung Teil 1** — Eingänge, Hauptachsen, Orientierungspunkte | Gelände | _[wird ergänzt]_ |
+| _[Uhrzeit]_ | **Geländebegehung Teil 2** — Outlets, Lager, Personalzugänge, Backstage | Gelände | _[wird ergänzt]_ |
+| _[Uhrzeit]_ | **Geländebegehung Teil 3** — Notausgänge, Sanitär, Erste-Hilfe-Punkte, Sicherheitspunkte | Gelände | _[wird ergänzt]_ |
+| _[Uhrzeit]_ | Mittagspause | _[wird ergänzt]_ | — |
 
-| Outlet | Konzept / Sortiment | Outlet-Lead | Standort auf Gelände | Kapazität |
-|--------|---------------------|-------------|----------------------|-----------|
-| _[Outlet 1]_ | _[wird ergänzt]_ | _[wird ergänzt]_ | _[wird ergänzt]_ | _[wird ergänzt]_ |
-| _[Outlet 2]_ | _[wird ergänzt]_ | _[wird ergänzt]_ | _[wird ergänzt]_ | _[wird ergänzt]_ |
-| _[Outlet 3]_ | _[wird ergänzt]_ | _[wird ergänzt]_ | _[wird ergänzt]_ | _[wird ergänzt]_ |
-| _[weitere ergänzen]_ | | | | |
+### Block 2 — Outlets & Abläufe (Früher Nachmittag)
 
-**Unterlagen Tag 2:**
-- [ ] Outlet-Steckbriefe (je Outlet 1 Seite)
-- [ ] Ablaufpläne je Outlet
-- [ ] Lagerplan
+| Zeit | Programmpunkt | Ort | Verantwortlich |
+|------|---------------|-----|----------------|
+| _[Uhrzeit]_ | **Outlet-Runde** — alle Outlets vorstellen: Konzept, Sortiment, Zuständigkeiten | Outlets | Outlet-Leads |
+| _[Uhrzeit]_ | **Ablauf-Besprechung je Outlet** — Schichtstart, Setup, Service, Abbau, Übergabe | Outlets | Outlet-Leads |
+| _[Uhrzeit]_ | **Lager & Nachschub** — Lagerstruktur, Nachbestellprozess, Zugangsregelungen | Lager | Lager-Lead |
 
----
+### Block 3 — Schulungen (Später Nachmittag)
 
-### TAG 3 — Schulungen: Kasse, Kommission & Technik
+> Die Schulungen finden parallel in Gruppen statt — Aufteilung nach Rolle.
 
-**Fokus:** Systeme praktisch erlernen — kein Outlet öffnet, bevor alle geschult sind.
-
-| Zeit | Programmpunkt | Ort | Verantwortlich | Zielgruppe |
-|------|---------------|-----|----------------|------------|
-| _[Uhrzeit]_ | Morgen-Briefing | _[Treffpunkt]_ | _[wird ergänzt]_ | Alle |
-| _[Uhrzeit]_ | **Kassen-Schulung** (Theorie) — System-Übersicht, Funktionen, Kassenabschluss | _[Schulungsraum]_ | _[Kassensystem-Trainer]_ | Kassenpersonal |
-| _[Uhrzeit]_ | **Kassen-Schulung** (Praxis) — Live-Training an echter Kasse, Fehlerfälle, Support-Ablauf | Outlets / Kassen | _[Kassensystem-Trainer]_ | Kassenpersonal |
-| _[Uhrzeit]_ | **Kommissions-Schulung** — Bestell- & Kommissionierungsabläufe, Prioritäten, Dokumentation | _[Schulungsraum/Lager]_ | _[wird ergänzt]_ | Kommissionierer |
-| _[Uhrzeit]_ | Mittagspause | _[wird ergänzt]_ | — | — |
-| _[Uhrzeit]_ | **Technik-Einführung** — Eingesetzte Systeme & Tools, Zugänge, Support-Wege | _[Schulungsraum]_ | _[Technik-Lead]_ | Alle relevanten Rollen |
-| _[Uhrzeit]_ | **Praxis-Übung / Simulation** — Ablauf-Simulation unter realen Bedingungen | Outlets / Gelände | Alle Leads | Alle |
-| _[Uhrzeit]_ | **Abschlussbriefing Onboarding** — Offene Fragen, Checklisten, nächste Schritte | _[Raum]_ | Projektleitung | Alle |
-| _[Uhrzeit]_ | Ausgabe Unterlagen, Badges, Zugänge | _[wird ergänzt]_ | _[wird ergänzt]_ | Alle |
+| Zeit | Modul | Zielgruppe | Ort | Verantwortlich |
+|------|-------|------------|-----|----------------|
+| _[Uhrzeit]_ | **Modul A — Kassen-Schulung** (Theorie + Praxis) | Kassenpersonal | _[Schulungsraum / Kasse]_ | _[Trainer]_ |
+| _[Uhrzeit]_ | **Modul B — Kommissions-Schulung** | Kommissionierer | _[Lager / Schulungsraum]_ | _[Trainer]_ |
+| _[Uhrzeit]_ | **Modul C — Technik-Einführung** | Alle Rollen | _[Schulungsraum]_ | Technik-Lead |
+| _[Uhrzeit]_ | **Praxis-Simulation** — Probelauf unter realen Bedingungen | Alle | Outlets / Gelände | Alle Leads |
+| _[Uhrzeit]_ | **Tagesabschluss** — offene Fragen, nächste Schritte | _[Raum]_ | Projektleitung | Alle |
+| _[Uhrzeit]_ | Ausgabe: Unterlagen, Badge, Zugangsdaten | _[Ausgabe-Punkt]_ | HR / IT-Support | Alle |
 
 ---
 
-#### Modul A — Kassen-Schulung
+## 4. Schulungsmodule (Inhalt)
 
-**Ziel:** Alle Kassenkräfte können selbstständig Transaktionen durchführen und Fehlerfälle lösen.
+### Modul A — Kassen-Schulung
+
+**Ziel:** Selbstständig Transaktionen durchführen, Fehlerfälle lösen, Tagesabschluss machen.
 
 | Thema | Inhalt | Dauer |
 |-------|--------|-------|
 | System-Login | Zugangsdaten, Schichtstart, Kassenöffnung | _[wird ergänzt]_ |
-| Verkaufsprozess | Artikel eingeben, Zahlungsarten, Bon | _[wird ergänzt]_ |
+| Verkaufsprozess | Artikel eingeben, Zahlungsarten (Bar/Karte), Bon | _[wird ergänzt]_ |
 | Storno & Korrekturen | Artikel stornieren, Schicht-Korrekturen | _[wird ergänzt]_ |
 | Tagesabschluss | Kassenabschluss, Abrechnung, Übergabe | _[wird ergänzt]_ |
 | Fehlerfälle & Support | Was tun bei Systemfehler, Ansprechpartner | _[wird ergänzt]_ |
@@ -114,15 +114,15 @@
 
 ---
 
-#### Modul B — Kommissions-Schulung
+### Modul B — Kommissions-Schulung
 
-**Ziel:** Kommissionierer kennen den vollständigen Bestell- und Lieferprozess von Anfang bis Ende.
+**Ziel:** Den vollständigen Bestell- und Lieferprozess von Anfang bis Ende beherrschen.
 
 | Thema | Inhalt | Dauer |
 |-------|--------|-------|
-| Bestellprozess | Wer bestellt, wie, wann, wo | _[wird ergänzt]_ |
-| Kommissionierung | Pickliste, Laufwege, Priorisierung | _[wird ergänzt]_ |
-| Übergabe an Outlet | Dokumentation, Quittierung, Abweichungen | _[wird ergänzt]_ |
+| Bestellprozess | Wer bestellt, wie, wann, wo — Zuständigkeiten | _[wird ergänzt]_ |
+| Kommissionierung | Pickliste lesen, Laufwege, Priorisierung | _[wird ergänzt]_ |
+| Übergabe an Outlet | Dokumentation, Quittierung, Umgang mit Abweichungen | _[wird ergänzt]_ |
 | Rückmeldung & Nachbestellung | Meldeschwellen, Notfallbestellungen | _[wird ergänzt]_ |
 | Fehlerfälle | Fehlmengen, falsche Ware, Reklamation | _[wird ergänzt]_ |
 
@@ -131,9 +131,9 @@
 
 ---
 
-#### Modul C — Technik-Einführung
+### Modul C — Technik-Einführung
 
-**Ziel:** Alle relevanten Rollen kennen die eingesetzten Systeme und wissen, wen sie bei Problemen kontaktieren.
+**Ziel:** Eingesetzte Systeme kennen, Zugänge haben, Support-Weg kennen.
 
 | System / Tool | Zweck | Zielgruppe | Zugangsdaten via |
 |---------------|-------|------------|-----------------|
@@ -141,29 +141,42 @@
 | _[wird ergänzt]_ | Kommissions-/Lagersystem | Kommissionierer | _[wird ergänzt]_ |
 | _[wird ergänzt]_ | Kommunikation / Dienstplan | Alle | _[wird ergänzt]_ |
 | _[wird ergänzt]_ | Reporting / Controlling | Leads | _[wird ergänzt]_ |
-| _[wird ergänzt]_ | _[wird ergänzt]_ | _[wird ergänzt]_ | _[wird ergänzt]_ |
+| _[weitere ergänzen]_ | | | |
 
 **IT-Support Onboarding:** _[Name]_ — Tel: _[wird ergänzt]_
 
 ---
 
-## 3. Onboarding-Checkliste je Mitarbeiter
+## 5. Outlet-Übersicht
+
+| Outlet | Konzept / Sortiment | Outlet-Lead | Standort auf Gelände | Kapazität |
+|--------|---------------------|-------------|----------------------|-----------|
+| _[Outlet 1]_ | _[wird ergänzt]_ | _[wird ergänzt]_ | _[wird ergänzt]_ | _[wird ergänzt]_ |
+| _[Outlet 2]_ | _[wird ergänzt]_ | _[wird ergänzt]_ | _[wird ergänzt]_ | _[wird ergänzt]_ |
+| _[Outlet 3]_ | _[wird ergänzt]_ | _[wird ergänzt]_ | _[wird ergänzt]_ | _[wird ergänzt]_ |
+| _[weitere ergänzen]_ | | | | |
+
+---
+
+## 6. Onboarding-Abzeichnung je Mitarbeiter
 
 > Jede Person bestätigt mit Unterschrift den Abschluss jedes Moduls.
+> Ausgefülltes Formular bleibt beim HR / Onboarding-Lead.
 
 | Modul | Abgeschlossen | Datum | Unterschrift Trainer |
 |-------|---------------|-------|----------------------|
-| Tag 1 — Geländebegehung | ☐ | | |
-| Tag 2 — Outlet-Runde & Abläufe | ☐ | | |
-| Tag 3 — Kassen-Schulung | ☐ | | |
-| Tag 3 — Kommissions-Schulung | ☐ | | |
-| Tag 3 — Technik-Einführung | ☐ | | |
+| Block 1 — Geländebegehung | ☐ | | |
+| Block 2 — Outlet-Runde & Abläufe | ☐ | | |
+| Modul A — Kassen-Schulung _(nur Kassenpersonal)_ | ☐ / n.a. | | |
+| Modul B — Kommissions-Schulung _(nur Kommissionierer)_ | ☐ / n.a. | | |
+| Modul C — Technik-Einführung | ☐ | | |
+| Praxis-Simulation | ☐ | | |
 | Unterlagen empfangen | ☐ | | |
 | Badge / Zugangsdaten erhalten | ☐ | | |
 
 ---
 
-## 4. Ansprechpartner / Kontakte
+## 7. Ansprechpartner / Kontakte
 
 ### Projektleitung & Leads
 
@@ -196,7 +209,7 @@
 
 ---
 
-## 5. Wichtige Nummern
+## 8. Wichtige Nummern
 
 ### Notfall & Behörden
 
@@ -228,7 +241,7 @@
 
 ---
 
-## 6. Rollen & Verantwortlichkeiten
+## 9. Rollen & Verantwortlichkeiten
 
 ### Organigramm
 
@@ -249,16 +262,16 @@ Projektleitung
 
 ### Rollenbeschreibungen
 
-| Rolle | Kernaufgaben | Schnittstellen |
-|-------|-------------|----------------|
-| Kassenpersonal | Verkauf, Abrechnung, Kassenabschluss | Outlet-Lead, IT-Support |
-| Kommissionierer | Bestellen, Picken, Liefern an Outlets | Lager-Lead, Outlet-Leads |
-| Outlet-Lead | Outlet-Verantwortung, Teamführung, Reporting | Operations-Lead, Kommission |
-| IT-Support | Systembetreuung, Fehlerbehebung | Alle |
+| Rolle | Kernaufgaben | Schulung erforderlich |
+|-------|-------------|----------------------|
+| Kassenpersonal | Verkauf, Abrechnung, Kassenabschluss | Modul A + C |
+| Kommissionierer | Bestellen, Picken, Liefern an Outlets | Modul B + C |
+| Outlet-Lead | Outlet-Verantwortung, Teamführung, Reporting | Block 2 + Modul C |
+| Allgemeines Personal | Service, Aufbau, Gästebetreuung | Block 1 + 2 + Modul C |
 
 ---
 
-## 7. Notfallplan
+## 10. Notfallplan
 
 ### Eskalationsstufen
 
@@ -266,17 +279,17 @@ Projektleitung
 |-------|-------------|----------|-----------------|
 | 1 — Gering | Technikstörung, Systemausfall | Interne Lösung | IT-Support / Technik-Lead |
 | 2 — Mittel | Personalausfall, Versorgungsengpass | Umstrukturierung, Eskalation | Operations-Lead |
-| 3 — Kritisch | Medizinischer Notfall / Sicherheitsvorfall | Notruf + Projektleitung | Projektleitung + Behörden |
+| 3 — Kritisch | Medizinischer Notfall / Sicherheitsvorfall | Notruf 112 + Projektleitung | Projektleitung + Behörden |
 
 ### Evakuierungsplan
 
-- Notausgänge: _[wird ergänzt]_
-- Sammelpunkt: _[wird ergänzt]_
-- Verantwortlich für Durchsage: _[wird ergänzt]_
+- **Notausgänge:** _[wird ergänzt]_
+- **Sammelpunkt:** _[wird ergänzt]_
+- **Verantwortlich für Durchsage:** _[wird ergänzt]_
 
 ---
 
-## 8. Kommunikationsplan
+## 11. Kommunikationsplan
 
 | Medium | Wann | Wer |
 |--------|------|-----|
@@ -287,39 +300,49 @@ Projektleitung
 
 ---
 
-## 9. Checkliste Projektleitung (Masterliste)
+## 12. Masterliste Projektleitung
 
-### Vor dem Onboarding (T-14)
+### Vor Onboarding-Start (T-14)
 
-- [ ] Onboarding-Programm finalisiert
-- [ ] Trainer für alle Module bestätigt
-- [ ] Schulungsräume und Materialien bereit
-- [ ] Geländepläne gedruckt
+- [ ] Kohorten-Zuweisung abgeschlossen
+- [ ] Onboarding-Tagesablauf an alle Trainer kommuniziert
+- [ ] Schulungsräume und Materialien für alle Kohorten-Tage reserviert
+- [ ] Geländepläne gedruckt (Menge: _[Anzahl]_)
 - [ ] Outlet-Steckbriefe erstellt
-- [ ] Kassensystem-Zugänge für Schulung eingerichtet
+- [ ] Kassensystem-Testumgebung / Schulungsmodus eingerichtet
 - [ ] Kommissions-System für Schulung eingerichtet
-- [ ] Onboarding-Checklisten je Mitarbeiter gedruckt
+- [ ] Onboarding-Abzeichnungsformulare gedruckt (je Mitarbeiter 1x)
+- [ ] Badges & Zugangsdaten vorbereitet
 
-### Während Onboarding
+### Jeden Onboarding-Tag (Wiederholung)
 
-- [ ] Tag 1 — Geländebegehung abgehalten
-- [ ] Tag 2 — Outlet-Runden durchgeführt
-- [ ] Tag 3 — Kassen-Schulung abgeschlossen
-- [ ] Tag 3 — Kommissions-Schulung abgeschlossen
-- [ ] Tag 3 — Technik-Einführung abgeschlossen
-- [ ] Alle Checklisten je Mitarbeiter unterschrieben
-- [ ] Zugangsdaten & Badges ausgegeben
+- [ ] Trainer anwesend und vorbereitet
+- [ ] Unterlagen für aktuelle Kohorte bereit
+- [ ] Vorherige Kohorte regulär eingeteilt
+- [ ] Tagesabschluss: alle Abzeichnungsformulare ausgefüllt und gesammelt
+- [ ] Badges & Zugangsdaten ausgegeben
 
-### Operativer Start
+### Nach letztem Onboarding-Tag
 
-- [ ] Alle Mitarbeitenden ongeboadet
+- [ ] Alle Mitarbeitenden ongeboadet (Vollständigkeitsprüfung)
 - [ ] Outlet-Leads bestätigen Betriebsbereitschaft
 - [ ] IT-Systeme live und getestet
 - [ ] Kommunikationskanäle aktiv
 
 ---
 
-## 10. Hinweise & Besonderheiten
+## 13. Unterlagen je Onboarding-Tag (Checkliste)
+
+- [ ] Geländeplan (gedruckt + QR-Code zur digitalen Version)
+- [ ] Outlet-Steckbriefe (je Outlet 1 Seite)
+- [ ] Tagesablauf-Übersicht
+- [ ] Notfallkontaktkarte (Scheckkarten-Format)
+- [ ] Abzeichnungsformular je Mitarbeiter
+- [ ] Zugangsdaten-Umschlag je Mitarbeiter
+
+---
+
+## 14. Hinweise & Besonderheiten
 
 > _Hier werden projektspezifische Hinweise, Sonderregelungen oder besondere Anforderungen eingetragen._
 
