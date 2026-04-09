@@ -33,7 +33,7 @@ werden an diesem Tag regulär eingeteilt.
 | **Onboarding-System** | Rolling-Cohort — identischer Tagesablauf je Gruppe |
 | **Ort / Venue** | _[wird ergänzt]_ |
 | **Adresse** | _[wird ergänzt]_ |
-| **Teamgröße gesamt** | _[wird ergänzt]_ |
+| **Teamgröße gesamt** | 70 PAX |
 | **Eventtyp** | _[wird ergänzt]_ |
 | **Veranstalter** | _[wird ergänzt]_ |
 
@@ -75,8 +75,13 @@ werden an diesem Tag regulär eingeteilt.
 
 | Zeit | Programmpunkt | Ort | Verantwortlich |
 |------|---------------|-----|----------------|
-| _[Uhrzeit]_ | **Outlet-Runde** — alle Outlets vorstellen: Konzept, Sortiment, Zuständigkeiten | Outlets | Outlet-Leads |
-| _[Uhrzeit]_ | **Ablauf-Besprechung je Outlet** — Schichtstart, Setup, Service, Abbau, Übergabe | Outlets | Outlet-Leads |
+| _[Uhrzeit]_ | **Outlet-Runde: Seeterrasse** — Konzept, Bestellkanäle (Kasse + QR), Setup | Seeterrasse | Outlet-Lead |
+| _[Uhrzeit]_ | **Outlet-Runde: Tribüne** — Konzept, Bestellkanäle (Kasse + QR), Setup | Tribüne | Outlet-Lead |
+| _[Uhrzeit]_ | **Outlet-Runde: Sparkassentribüne** — Konzept, **nur Kasse** (kein QR!), Setup | Sparkassentribüne | Outlet-Lead |
+| _[Uhrzeit]_ | **Outlet-Runde: Hamsfeldhof** — Eis & Drinks, Bestellkanäle (Kasse + QR) | Hamsfeldhof | Outlet-Lead |
+| _[Uhrzeit]_ | **Outlet-Runde: Zelt Terrasse** — Eis & Drinks, Bestellkanäle (Kasse + QR) | Zelt Terrasse | Outlet-Lead |
+| _[Uhrzeit]_ | **Outlet-Runde: Zelt** — Frühstück/Mittag/Kuchen/Getränke, **3 Kanäle** (SOT + QR + Kasse) | Zelt | Outlet-Lead |
+| _[Uhrzeit]_ | **Ablauf-Besprechung** — Schichtstart, Setup, Service, Abbau, Übergabe (gilt für alle Outlets) | _[Raum]_ | Operations-Lead |
 | _[Uhrzeit]_ | **Lager & Nachschub** — Lagerstruktur, Nachbestellprozess, Zugangsregelungen | Lager | Lager-Lead |
 
 ### Block 3 — Schulungen (Später Nachmittag)
@@ -98,15 +103,46 @@ werden an diesem Tag regulär eingeteilt.
 
 ### Modul A — Kassen-Schulung
 
-**Ziel:** Selbstständig Transaktionen durchführen, Fehlerfälle lösen, Tagesabschluss machen.
+**Ziel:** Selbstständig Transaktionen durchführen, alle Bestellkanäle bedienen, Fehlerfälle lösen, Tagesabschluss machen.
+
+> **Wichtig:** Bargeld wird nirgendwo akzeptiert — ausschließlich bargeldlose Zahlung.
+> Mitarbeitende müssen Gäste ggf. klar und freundlich darauf hinweisen.
+
+#### A1 — Grundlagen Kasse (alle Outlets)
 
 | Thema | Inhalt | Dauer |
 |-------|--------|-------|
 | System-Login | Zugangsdaten, Schichtstart, Kassenöffnung | _[wird ergänzt]_ |
-| Verkaufsprozess | Artikel eingeben, Zahlungsarten (Bar/Karte), Bon | _[wird ergänzt]_ |
-| Storno & Korrekturen | Artikel stornieren, Schicht-Korrekturen | _[wird ergänzt]_ |
+| Artikel & Bestellung | Artikel eingeben / auswählen, Mengen, Modifikationen | _[wird ergänzt]_ |
+| Zahlungsabwicklung | Kartenzahlung, NFC/Mobile Pay — **kein Bargeld** | _[wird ergänzt]_ |
+| Bon & Quittung | Bon-Ausgabe, digitale Quittung | _[wird ergänzt]_ |
+| Storno & Korrekturen | Artikel stornieren, Bestellung korrigieren | _[wird ergänzt]_ |
 | Tagesabschluss | Kassenabschluss, Abrechnung, Übergabe | _[wird ergänzt]_ |
-| Fehlerfälle & Support | Was tun bei Systemfehler, Ansprechpartner | _[wird ergänzt]_ |
+| Fehlerfälle & Support | Systemfehler, Zahlungsabbruch, Ansprechpartner | _[wird ergänzt]_ |
+
+#### A2 — QR-Code-Bestellungen (Seeterrasse, Tribüne, Hamsfeldhof, Zelt Terrasse, Zelt)
+
+| Thema | Inhalt | Dauer |
+|-------|--------|-------|
+| Prozessablauf | Kunde scannt → bestellt → bezahlt selbst → Personal bereitet zu → Gast holt ab | _[wird ergänzt]_ |
+| Eingehende Bestellungen | Wie erscheinen QR-Bestellungen im System, Bestätigung | _[wird ergänzt]_ |
+| Abholmanagement | Bestellung zuordnen, Ausgabe, Kommunikation mit Gast | _[wird ergänzt]_ |
+| Fehler beim QR-Prozess | Doppelbestellung, Zahlung ausstehend, Storno seitens Gast | _[wird ergänzt]_ |
+
+#### A3 — SOT Self-Order-Terminal (nur Zelt)
+
+| Thema | Inhalt | Dauer |
+|-------|--------|-------|
+| SOT-Bedienung | Wie funktioniert das Terminal aus Gast-Sicht | _[wird ergänzt]_ |
+| SOT-Bestellungen im System | Eingang, Priorität, Ausgabe | _[wird ergänzt]_ |
+| SOT-Fehlerfälle | Terminal hängt, Fehlerquittierung, Eskalation | _[wird ergänzt]_ |
+
+#### A4 — Outlet-spezifische Besonderheiten
+
+| Outlet | Besonderheit | Schulungsinhalt |
+|--------|-------------|-----------------|
+| **Sparkassentribüne** | Kein QR-Code | Alle Bestellungen laufen über Kasse; Gäste aktiv informieren, dass QR-Code hier nicht möglich ist |
+| **Zelt** | 3 Bestellkanäle gleichzeitig | Koordination zwischen Kasse, QR und SOT; Reihenfolge & Prioritäten klären |
 
 **Kassensystem:** _[wird ergänzt]_
 **Trainer:** _[wird ergänzt]_
@@ -149,12 +185,33 @@ werden an diesem Tag regulär eingeteilt.
 
 ## 5. Outlet-Übersicht
 
-| Outlet | Konzept / Sortiment | Outlet-Lead | Standort auf Gelände | Kapazität |
-|--------|---------------------|-------------|----------------------|-----------|
-| _[Outlet 1]_ | _[wird ergänzt]_ | _[wird ergänzt]_ | _[wird ergänzt]_ | _[wird ergänzt]_ |
-| _[Outlet 2]_ | _[wird ergänzt]_ | _[wird ergänzt]_ | _[wird ergänzt]_ | _[wird ergänzt]_ |
-| _[Outlet 3]_ | _[wird ergänzt]_ | _[wird ergänzt]_ | _[wird ergänzt]_ | _[wird ergänzt]_ |
-| _[weitere ergänzen]_ | | | | |
+> **Gesamtes Gelände: ausschließlich bargeldlose Zahlung (kein Bargeld).**
+
+| Outlet | Konzept / Sortiment | Bestellkanäle | Besonderheit | Outlet-Lead | Kapazität |
+|--------|---------------------|---------------|--------------|-------------|-----------|
+| **Seeterrasse** | Food & Drinks | QR-Code, Kasse | — | _[wird ergänzt]_ | _[wird ergänzt]_ |
+| **Tribüne** | Food & Drinks | QR-Code, Kasse | — | _[wird ergänzt]_ | _[wird ergänzt]_ |
+| **Sparkassentribüne** | Food & Drinks | Kasse | **Kein QR-Code** | _[wird ergänzt]_ | _[wird ergänzt]_ |
+| **Hamsfeldhof** | Eis & Drinks | QR-Code, Kasse | — | _[wird ergänzt]_ | _[wird ergänzt]_ |
+| **Zelt Terrasse** | Eis & Drinks | QR-Code, Kasse | — | _[wird ergänzt]_ | _[wird ergänzt]_ |
+| **Zelt** | Frühstück, Mittag, Kuchen, Getränke | SOT, QR-Code, Kasse | 3 Bestellkanäle | _[wird ergänzt]_ | _[wird ergänzt]_ |
+
+### Bestellkanal-Übersicht je Outlet
+
+```
+Outlet               | Kasse | QR-Code | SOT
+---------------------|-------|---------|----
+Seeterrasse          |   ✓   |    ✓    |  —
+Tribüne              |   ✓   |    ✓    |  —
+Sparkassentribüne    |   ✓   |    ✗    |  —
+Hamsfeldhof          |   ✓   |    ✓    |  —
+Zelt Terrasse        |   ✓   |    ✓    |  —
+Zelt                 |   ✓   |    ✓    |  ✓
+```
+
+> **SOT** = Self-Order-Terminal (stationäres Bestellgerät vor Ort im Zelt)
+> **QR-Code** = Kunde scannt, bestellt & bezahlt per Smartphone, holt ab
+> **Kasse** = Direktbestellung beim Personal, bargeldlose Zahlung
 
 ---
 
@@ -193,9 +250,12 @@ werden an diesem Tag regulär eingeteilt.
 
 | Outlet | Outlet-Lead | Telefon | E-Mail |
 |--------|-------------|---------|--------|
-| _[Outlet 1]_ | _[wird ergänzt]_ | _[wird ergänzt]_ | _[wird ergänzt]_ |
-| _[Outlet 2]_ | _[wird ergänzt]_ | _[wird ergänzt]_ | _[wird ergänzt]_ |
-| _[Outlet 3]_ | _[wird ergänzt]_ | _[wird ergänzt]_ | _[wird ergänzt]_ |
+| Seeterrasse | _[wird ergänzt]_ | _[wird ergänzt]_ | _[wird ergänzt]_ |
+| Tribüne | _[wird ergänzt]_ | _[wird ergänzt]_ | _[wird ergänzt]_ |
+| Sparkassentribüne | _[wird ergänzt]_ | _[wird ergänzt]_ | _[wird ergänzt]_ |
+| Hamsfeldhof | _[wird ergänzt]_ | _[wird ergänzt]_ | _[wird ergänzt]_ |
+| Zelt Terrasse | _[wird ergänzt]_ | _[wird ergänzt]_ | _[wird ergänzt]_ |
+| Zelt | _[wird ergänzt]_ | _[wird ergänzt]_ | _[wird ergänzt]_ |
 
 ### Externe Ansprechpartner
 
