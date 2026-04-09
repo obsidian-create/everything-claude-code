@@ -144,7 +144,7 @@ werden an diesem Tag regulär eingeteilt.
 | **Sparkassentribüne** | Kein QR-Code | Alle Bestellungen laufen über Kasse; Gäste aktiv informieren, dass QR-Code hier nicht möglich ist |
 | **Zelt** | 3 Bestellkanäle gleichzeitig | Koordination zwischen Kasse, QR und SOT; Reihenfolge & Prioritäten klären |
 
-**Kassensystem:** _[wird ergänzt]_
+**Kassensystem:** HelloTESS
 **Trainer:** _[wird ergänzt]_
 **Max. Gruppengröße:** _[wird ergänzt]_
 
@@ -173,7 +173,7 @@ werden an diesem Tag regulär eingeteilt.
 
 | System / Tool | Zweck | Zielgruppe | Zugangsdaten via |
 |---------------|-------|------------|-----------------|
-| _[wird ergänzt]_ | Kassensystem | Kassenpersonal | _[wird ergänzt]_ |
+| **HelloTESS** | Kassensystem (Kasse, QR-Bestellungen, SOT) | Kassenpersonal, Outlet-Leads | _[wird ergänzt]_ |
 | _[wird ergänzt]_ | Kommissions-/Lagersystem | Kommissionierer | _[wird ergänzt]_ |
 | _[wird ergänzt]_ | Kommunikation / Dienstplan | Alle | _[wird ergänzt]_ |
 | _[wird ergänzt]_ | Reporting / Controlling | Leads | _[wird ergänzt]_ |
@@ -262,7 +262,7 @@ Zelt                 |   ✓   |    ✓    |  ✓
 | Firma / Rolle | Name | Telefon | Bereich |
 |---------------|------|---------|---------|
 | Venue Manager | _[wird ergänzt]_ | _[wird ergänzt]_ | Gelände, Infrastruktur |
-| Kassensystem-Anbieter Support | _[wird ergänzt]_ | _[wird ergänzt]_ | Kassen-IT |
+| HelloTESS Support | _[wird ergänzt]_ | _[wird ergänzt]_ | Kassensystem (Kasse, QR, SOT) |
 | Kommissions-System Support | _[wird ergänzt]_ | _[wird ergänzt]_ | Lager-IT |
 | Security-Firma | _[wird ergänzt]_ | _[wird ergänzt]_ | Sicherheit |
 | Medizinischer Dienst | _[wird ergänzt]_ | _[wird ergänzt]_ | Erste Hilfe |
@@ -287,7 +287,7 @@ Zelt                 |   ✓   |    ✓    |  ✓
 | Venue Pforte / Empfang | _[wird ergänzt]_ |
 | Venue Haustechnik | _[wird ergänzt]_ |
 | IT-Support (intern) | _[wird ergänzt]_ |
-| Kassen-Hotline | _[wird ergänzt]_ |
+| HelloTESS Support-Hotline | _[wird ergänzt]_ |
 
 ### Team-Kommunikation
 
